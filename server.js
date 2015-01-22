@@ -42,7 +42,7 @@ app.get('/scrape', function(req, res){
 			        
 		        });
 
-				fs.appendFile('sandwiches.json', JSON.stringify(json, null, 4), function(err){
+				fs.appendFile('data/sandwiches.json', JSON.stringify(json, null, 4), function(err){
 			        console.log('File successfully written!');
 			    });
 
