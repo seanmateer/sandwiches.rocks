@@ -16,7 +16,8 @@ app.get('/scrape', function(req, res){
 				origin,
 				description;
 
-			var json = { name : "", image: "", origin : "", description : ""};
+			var json = { name : '', image: '', origin : '', description : ''};
+
 
 			$('table.wikitable tr').each(function(){
 				var row = $(this);
@@ -35,7 +36,7 @@ app.get('/scrape', function(req, res){
 			        	description = $(this).text()
 					};
 
-			        json.name = name;
+			        json.name = "['" + name + "']";
 			        json.image = image;
 			        json.origin = origin;
 			        json.description = description;   
