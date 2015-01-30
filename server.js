@@ -16,39 +16,34 @@ app.get('/scrape', function(req, res){
 				origin,
 				description;
 
-			var json = { name : '', image: '', origin : '', description : ''};
+			var results = [];
 
 
 			$('table.wikitable tr').each(function(){
-				var row = $(this);
+				var $row = $(this);
+				var json = { name : '', image: '', origin : '', description : ''};
 
-				$(row.children('td')).each(function(i){
+				$row.children('td').each(function(i){
 					if (i === 0){
-			        	name = $(this).text()
+			        	json.name = $(this).text()
 					};
 					if (i === 1){
-			         	image = $(this).find('img').attr('src');
+			         	json.image = $(this).find('img').attr('src');
 					};
 					if (i === 2){
-			        	origin = $(this).text()
+			        	json.origin = $(this).text()
 					};
 					if (i === 3){
-			        	description = $(this).text()
+			        	json.description = $(this).text()
 					};
-
-			        json.name = "['" + name + "']";
-			        json.image = image;
-			        json.origin = origin;
-			        json.description = description;   
 			        
 		        });
-
-				fs.appendFile('data/sandwiches.json', JSON.stringify(json, null, 4), function(err){
-			        console.log('File successfully written!');
-			    });
+				results.push(json);
 
 			});
-
+			fs.appendFile('data/sandwiches.json', JSON.stringify(results, null, 4), function(err){
+		        console.log('File successfully written!');
+		  	});
 		};
 
         res.send('check your console');
