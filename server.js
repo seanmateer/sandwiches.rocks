@@ -25,16 +25,17 @@ app.get('/scrape', function(req, res){
 
 				$row.children('td').each(function(i){
 					if (i === 0){
-			        	json.name = $(this).text()
+			        	json.name = $(this).text().replace(/[0-9]/g,"")
+			        							  .replace(/[\[\]']+/g,"");
 					};
 					if (i === 1){
 			         	json.image = $(this).find('img').attr('src');
 					};
 					if (i === 2){
-			        	json.origin = $(this).text()
+			        	json.origin = $(this).text().replace(/[\[\]']+/g,"");
 					};
 					if (i === 3){
-			        	json.description = $(this).text()
+			        	json.description = $(this).text().replace(/[\[\]']+/g,"");
 					};
 			        
 		        });
