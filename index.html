@@ -4,32 +4,22 @@
     <title>sandwiches.rocks</title>
     <meta name="description" content="A List of Notable Sandwiches">
     <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
-
-
+<div class="controls">
+  <label>Sort:</label>
+  
+  <button class="sort" data-sort="myorder:asc">Asc</button>
+  <button class="sort" data-sort="myorder:desc">Desc</button>
+</div>
+<div id="container" class="container">
+</div>
 
 
 <script src="/bower_components/jquery/jquery.min.js"></script>
-<script>
+<script src="/bower_components/mixitup/build/jquery.mixitup.min.js"></script>
 
-    var request = new XMLHttpRequest();
-       request.open("GET", "data/sandwiches.json", false);
-       request.send(null);
-
-    var jsonString = JSON.parse(request.responseText);
-
-    $(document).ready(function() {
-     
-        $.each(jsonString, function() {
-            var $ul = $('<ul class="group">').appendTo('body');
-            $('<li>' + this.name + '</li>').appendTo($ul);
-            $('<li>' + this.origin + '</li>').appendTo($ul);
-            $('<li> <img src="http://' + this.image + '"></li>').appendTo($ul);
-            $('<li>' + this.description + '</li>').appendTo($ul);
-            
-        });
-    });
-</script>
+<script src="/js/app.js"></script>
 </body>
 </html>
