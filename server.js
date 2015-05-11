@@ -23,13 +23,25 @@ app.get('/scrape', function(req, res){
 				var $row = $(this);
 				var json = { name : '', image: '', origin : '', description : ''};
 
+
+
 				$row.children('td').each(function(i){
 					if (i === 0){
 			        	json.name = $(this).text().replace(/[0-9]/g,"")
 			        							  .replace(/[\[\]']+/g,"");
 					};
 					if (i === 1){
-			         	json.image = $(this).find('img').attr('src');
+						var image =  $(this).find('img');
+						json.image = image.attr('src');
+						json.image.replace(/[0-9]/g,"");
+						console.log(json.image);
+			         	// json.image = $(this).find('img').attr('src');
+			         	// $(this).attr("src", $(this).attr("src").replace(...))
+			         	// $(this).attr('name', $(this).attr('name').replace('rules\[0\]','rules\[$count\]'));
+
+			         	// console.log(imagePath);
+			         	// imagePath.replace(/(\/thum)\w+/g,"");
+			         	// json.image = imagePath;
 					};
 					if (i === 2){
 			        	json.origin = $(this).text().replace(/[\[\]']+/g,"");
