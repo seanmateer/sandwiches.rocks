@@ -31,10 +31,11 @@ app.get('/scrape', function(req, res){
 			        							  .replace(/[\[\]']+/g,"");
 					};
 					if (i === 1){
-						var image =  $(this).find('img');
-						json.image = image.attr('src');
-						json.image.replace(/[0-9]/g,"");
-						console.log(json.image);
+						var image =  $(this).find('img').attr('src');
+						json.image = image
+
+						// json.image.replace(/[0-9]/g,"");
+						// console.log(json.image);
 			         	// json.image = $(this).find('img').attr('src');
 			         	// $(this).attr("src", $(this).attr("src").replace(...))
 			         	// $(this).attr('name', $(this).attr('name').replace('rules\[0\]','rules\[$count\]'));

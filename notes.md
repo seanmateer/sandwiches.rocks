@@ -11,3 +11,8 @@ upload.wikimedia.org/wikipedia/commons/5/58/Baked_bean_sandwich.jpg
 //remove anything after last backslash]
 
 /(\/thum)\w+/g
+
+/(\/120px-)\w+\.jpg/g
+
+Match any not whitespace
+/(\/120px-)\S+/g
