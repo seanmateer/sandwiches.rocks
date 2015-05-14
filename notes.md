@@ -14,5 +14,5 @@ upload.wikimedia.org/wikipedia/commons/5/58/Baked_bean_sandwich.jpg
 
 /(\/120px-)\w+\.jpg/g
 
-Match any not whitespace
+Match any not whitespace after /120px-
 /(\/120px-)\S+/g
