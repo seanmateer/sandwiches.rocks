@@ -19,3 +19,5 @@ Match any not whitespace after /120px-
 
 Match everything up to 120px- 
 .+?(?:120px-)
+
+bonk
