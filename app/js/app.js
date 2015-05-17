@@ -8,7 +8,7 @@
         var $ul = $('<div class="master"></div>').appendTo('#container');
 
         $.each(jsonString, function(i) {
-            var $li = $('<div class="mix" data-myorder="'+ i +'"></div>').appendTo('.master');
+            var $li = $('<div class="mix card" data-myorder="'+ i +'"></div>').appendTo('.master');
             $('<h2>' + this.name + '</h2>').appendTo($li);
             $('<h3>' + this.origin + '</h3>').appendTo($li);
                  var replaceUrl = $('<p class="replace">http://' + this.image + '</p>');

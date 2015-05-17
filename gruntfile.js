@@ -21,6 +21,13 @@ module.exports = function(grunt) {
         }
     },
 
+    watch: {
+        sass: {
+            files: ['app/{,*/}*.scss'],
+            tasks: ['sass'],
+        }
+    },
+
     responsive_images: {
         myTask: {
             options: {
@@ -40,6 +47,6 @@ module.exports = function(grunt) {
   });
 
   grunt.registerTask('images', 'This crunches images.', ['responsive_images']);
-  grunt.registerTask('default', ['sass', 'uglify']);
+  grunt.registerTask('default', ['sass', 'uglify', 'watch']);
 
 };

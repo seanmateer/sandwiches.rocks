@@ -1,0 +1,111 @@
+.mix h2,
+.mix h3,
+.mix p {
+  padding: 0 10px;
+}
+
+
+.card{
+  position: relative;
+  text-align: left;
+  background: $card-even;
+  margin-bottom: 2%;
+
+  &:before{
+    transition: opacity .2 ease;
+    content: " ";
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: $secondary;
+    opacity: 0;
+  }
+
+  &:after{
+    transition: opacity .2 ease;
+    content: " ";
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 150px;
+    height: 150px;
+    border-radius: 150px;
+    background-color: $primary;
+    opacity: 0;
+  }
+
+  h2{
+    color: $dark-gray;
+    margin-bottom: 5px;
+  }
+}
+
+.card:nth-child(even){
+  background-color: $card-odd;
+
+  h2{
+    color: darken($dark-gray, 10%);
+  }
+}
+
+
+.card:hover{
+
+  &:before{
+    transition: opacity .2s ease;
+    opacity: .8;
+  }
+
+  &:after{
+    transition: opacity .2s ease;
+    transition-delay: .2s;
+    opacity: .8;
+  }
+}
+
+
+.mix h3{
+  margin-top: 0px;
+  font-weight: 300;
+}
+.mix .wrap {
+	display: block;
+	width: 100%;
+	max-height: 200px;
+	overflow: hidden;
+  /*position: relative;*/
+
+}
+
+.mix img {
+	width: 100%;
+	height: auto;
+}
+
+.container .mix.category-1{
+  border-top: 2px solid limegreen;
+}
+
+.container .mix.category-2{
+  border-top: 2px solid yellow;
+}
+
+@media all and (min-width: 420px){
+  .container .mix,
+  .container .gap{
+    width: 32%;
+  }
+}
+
+@media all and (min-width: 640px){
+  .container .mix,
+  .container .gap{
+    width: 19%;
+      display: block;
+    height: 500px;
+    margin: 0.5%;
+    overflow: hidden;
+  }
+}

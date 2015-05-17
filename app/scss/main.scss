@@ -1,6 +1,9 @@
+@import 'colors.scss';
+
 body, html{
 	margin: 0;
 	padding: 0;
+  font-family: 'Lato';
 }
 
 .master{
@@ -16,13 +19,9 @@ body, html{
   box-sizing: border-box;
 }
 
-body, button{
-  font-family: 'Helvetica Neue', arial, sans-serif;
-}
-
 .controls{
-  padding: 2%;
-  background: #333;
+  padding: 1.5%;
+  background: #1f1f1f;
   color: #eee;
 }
 
@@ -58,8 +57,7 @@ button + label{
 .container{
   padding: 2% 2% 0;
   text-align: justify;
-/*  font-size: 0.1px;*/
-/*  background: #68b8c4;*/
+  background-color: $bkg;
   
   -webkit-backface-visibility: hidden;
 }
@@ -76,49 +74,6 @@ button + label{
   width: 49%;
 }
 
-.container .mix{
-  text-align: left;
-  background: #03899c;
-  margin-bottom: 2%;
-}
-
-
-.mix h2,
-.mix h3,
-.mix p {
-  padding: 0 10px;
-}
-
-.mix h2{
-  color: white;
-  margin-bottom: 5px;
-}
-.mix h3{
-  margin-top: 0px;
-  font-weight: 300;
-}
-.mix .wrap {
-	display: block;
-	width: 100%;
-	max-height: 200px;
-	overflow: hidden;
-  /*position: relative;*/
-
-}
-
-.mix img {
-	width: 100%;
-	height: auto;
-}
-
-.container .mix.category-1{
-  border-top: 2px solid limegreen;
-}
-
-.container .mix.category-2{
-  border-top: 2px solid yellow;
-}
-
 /*.container .mix:after{
   content: attr(data-myorder);
   color: white;
@@ -131,20 +86,11 @@ button + label{
   font-weight: 700;
 }*/
 
-@media all and (min-width: 420px){
-  .container .mix,
-  .container .gap{
-    width: 32%;
-  }
-}
 
-@media all and (min-width: 640px){
-  .container .mix,
-  .container .gap{
-    width: 24.4%;
-      display: block;
-    height: 500px;
-    margin: 0.3%;
-    overflow: hidden;
-  }
-}
+@import 'header.scss';
+@import 'card.scss';
+
+
+
+
+
