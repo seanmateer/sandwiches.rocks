@@ -9,7 +9,7 @@
   position: relative;
   text-align: left;
   background: $card-even;
-  margin-bottom: 2%;
+  margin-bottom: 1%;
 
   &:before{
     transition: opacity .2 ease;
@@ -23,14 +23,22 @@
   }
 
   &:after{
-    transition: opacity .2 ease;
+    transition: all .2 ease;
     content: " ";
+    background-image: url('../../app/assets/check3.svg');
+    background-size: cover;
+    background-repeat: none;
+    text-align: center;
+    color: white;
     display: block;
     position: absolute;
     top: 50%;
-    left: 50%;
-    width: 150px;
-    height: 150px;
+    transform: translateY(-50%);
+    right: 0;
+    left: 0;
+    margin: 0 auto;
+    width: 20px;
+    height: 20px;
     border-radius: 150px;
     background-color: $primary;
     opacity: 0;
@@ -40,6 +48,10 @@
     color: $dark-gray;
     margin-bottom: 5px;
   }
+}
+
+.replace{
+  display: none;
 }
 
 .card:nth-child(even){
@@ -59,9 +71,11 @@
   }
 
   &:after{
-    transition: opacity .2s ease;
-    transition-delay: .2s;
-    opacity: .8;
+    transition: all .2s ease;
+    transition-delay: .1s;
+    opacity: 1;
+    width: 150px;
+    height: 150px;
   }
 }
 
@@ -105,7 +119,6 @@
     width: 19%;
       display: block;
     height: 500px;
-    margin: 0.5%;
     overflow: hidden;
   }
 }
