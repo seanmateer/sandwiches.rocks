@@ -105,5 +105,51 @@ button + label{
   }
 }
 
+.logo-start {
+  transform: translateY(-25px);
+}
 
+.logo-move {
+  position: relative;
+  animation: float 1.5s linear alternate infinite;
+  animation-delay: .2s;
+  &.two {
+    animation-delay: .4s;
+  }
+  &.three{
+    animation-delay: .6s;
+  }
+  &.four {
+    animation-delay: .8s;
+  }
+}
+
+// @keyframes float {
+//   0% {
+//     transform: translateY(-50px);
+//   }
+//   25% {
+//    transform: translateY(-20px); 
+//   }
+//   75% {
+//    transform: translateY(20px); 
+//   }
+//   100% {
+//     transform: translateY(50px);
+//   }
+// }
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  25% {
+   transform: translateY(10px); 
+  }
+  75% {
+   transform: translateY(40px); 
+  }
+  100% {
+    transform: translateY(50px);
+  }
+}
 

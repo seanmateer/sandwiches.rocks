@@ -12,15 +12,17 @@
 	<header>
 		<h1>Sandwiches.rocks</h1>
 		<div class="logo">
-			<?php echo file_get_contents("app/assets/sandwich.svg"); ?>
+			<?php echo file_get_contents("app/assets/sandwich2.svg"); ?>
 		</div>
 	</header>
 
 	<div class="controls">
 		<label>Sort:</label>
-		<button class="sort" data-sort="myorder:asc">Asc</button>
-		<button class="sort" data-sort="myorder:desc">Desc</button>
+<!-- 		<button class="sort" data-sort="myorder:asc">Asc Sandwiches</button>
+		<button class="sort" data-sort="myorder:desc">Desc Sandwiches</button> -->
+		<button class="sort" data-sort="random">Random Sandwiches</button>
 	</div>
+	<button class="sort" data-sort="random">lol</button>
 
 	<div id="container" class="container">
 		<?php
