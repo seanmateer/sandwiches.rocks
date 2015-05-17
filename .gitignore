@@ -1,5 +1,6 @@
-data
-downloads
 bower_components
+data
+dist
+downloads
 node_modules
 .sass-cache

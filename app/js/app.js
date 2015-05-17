@@ -12,7 +12,9 @@
             $('<h2>' + this.name + '</h2>').appendTo($li);
             $('<h3>' + this.origin + '</h3>').appendTo($li);
                  var replaceUrl = $('<p class="replace">http://' + this.image + '</p>');
-                 var imgPath = $(replaceUrl).text().replace(/.+?(?:120px-)/g,"downloads/");
+                 var imgPath = $(replaceUrl).text()
+                    .replace(/.+?(?:120px-)/g,"dist/img/")
+                    .replace(/(\.)/g,"-320.");
                  $('<div class="wrap"><img src="' + imgPath + '"></div>').appendTo($li);
             $('<p>' + this.description + '</p>').appendTo($li);
         });

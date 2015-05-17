@@ -1,36 +1,44 @@
 module.exports = function(grunt) {
 
-// Load grunt tasks automatically
-require('load-grunt-tasks')(grunt);
+  // Load grunt tasks automatically
+  require('load-grunt-tasks')(grunt);
 
-grunt.initConfig({
+  grunt.initConfig({
 
-  sass: {
-    dist: {
-      files: {
-        'dist/css/main.css': 'app/scss/main.scss'
+    sass: {
+      dist: {
+        files: {
+          'dist/css/main.css': 'app/scss/main.scss'
+        }
       }
+    },
+
+    uglify: {
+        my_target: {
+            files: {
+                'dist/js/app.min.js': ['app/js/app.js']
+            }
+        }
+    },
+
+    responsive_images: {
+        myTask: {
+            options: {
+                sizes: [{
+                    width: 320
+                }]
+            },
+            files: [{
+                expand: true,
+                src: ['**.{jpg,gif,png}'],
+                cwd: 'downloads',
+                dest: 'dist/img/'
+            }]
+        }
     }
-  },
 
- responsive_images: {
-    myTask: {
-      options: {
-        sizes: [{
-          width: 400,
-          suffix: ""
-        }]
-      },
-      files: {
-        'dist/images/test.jpg': 'downloads/Baconbutty.jpg'
-      }
-    }
-  }
+  });
 
-});
-
-grunt.registerTask('default', ['sass', 'responsive_images']);
+  grunt.registerTask('default', ['sass', 'uglify', 'responsive_images']);
 
 };
-
-

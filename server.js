@@ -18,7 +18,6 @@ app.get('/scrape', function(req, res){
 
 			var results = [];
 
-
 			$('table.wikitable tr').each(function(){
 				var $row = $(this);
 				var json = { name : '', image: '', origin : '', description : ''};
