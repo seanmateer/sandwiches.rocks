@@ -1,6 +1,6 @@
  var request = new XMLHttpRequest();
-       request.open("GET", "data/sandwiches.json", false);
-       request.send(null);
+     request.open("GET", "data/sandwiches.json", false);
+     request.send(null);
 
     var jsonString = JSON.parse(request.responseText);
 
