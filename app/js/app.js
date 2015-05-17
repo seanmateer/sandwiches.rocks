@@ -17,10 +17,12 @@
                     .replace(/(\.)/g,"-320.");
                  $('<div class="wrap"><img src="' + imgPath + '"></div>').appendTo($li);
             $('<p>' + this.description + '</p>').appendTo($li);
+            $('<p>boink</p>').appendTo($li);
         });
 
         $(function(){
           $('#container').mixItUp();
         });
+
     });
 

@@ -39,6 +39,7 @@ module.exports = function(grunt) {
 
   });
 
-  grunt.registerTask('default', ['sass', 'uglify', 'responsive_images']);
+  grunt.registerTask('images', 'This crunches images.', ['responsive_images']);
+  grunt.registerTask('default', ['sass', 'uglify']);
 
 };

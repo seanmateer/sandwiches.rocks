@@ -29,7 +29,7 @@ var exec = require('child_process').exec;
                                 .replace(/(\/120px-)\S+/g,"");
                             var fileName = url.parse(fileUrl).pathname.split('/').pop();
                             
-                            //in curl we have to escape '&' from fileUrl
+                            // in curl we have to escape '&' from fileUrl
                             var curl =  'curl ' + fileUrl.replace(/&/g,'\\&') +' -o ' + dlDir+fileName + ' --create-dirs';
                             var child = exec(curl, function(err, stdout, stderr) {
                                 if (err){ console.log(stderr); throw err; } 
