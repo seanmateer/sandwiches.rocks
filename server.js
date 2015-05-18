@@ -42,6 +42,11 @@ app.get('/scrape', function(req, res){
 				results.push(json);
 
 			});
+
+			if (!fs.existsSync('data')){
+			    fs.mkdirSync('data');
+			}
+
 			fs.appendFile('data/sandwiches.json', JSON.stringify(results, null, 4), function(err){
 		        console.log('File successfully written!');
 		  	});

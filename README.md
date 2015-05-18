@@ -12,4 +12,6 @@ Your guide to a list of notable sandwiches.
 ## Display sandwiches
 
 * npm install && bower install
+* brew install GraphicsMagick – Requires [Homebrew](http://brew.sh/)
+* grunt images
 * grunt
