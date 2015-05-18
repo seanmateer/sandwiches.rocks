@@ -24,8 +24,17 @@ $(document).ready(function() {
 		$(this).parent().append('<img src="'+imgPath+'"/>');
 	});
 
-	$('.card').on('click',function(){
-		$(this).toggleClass('checked');
+	$(function() {
+	    $(window).scroll(function() {
+	        var vertAlign = ($(window).scrollTop());
+	        if (vertAlign <= 80){
+	        	$("header").css('padding', 80 - vertAlign);
+	    	}
+	    });
+	});
+
+	$('.check').on('click',function(){
+		$(this).parent().toggleClass('checked');
 	});
 
 	$(function(){

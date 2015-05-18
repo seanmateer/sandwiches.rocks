@@ -29,6 +29,10 @@
 		width: 0px;
 		height: 0px;
 		border-radius: 150px;
+		border: 10px solid rgba(255, 255, 255, .4);
+		-webkit-background-clip: padding-box; /* for Safari */
+    	background-clip: padding-box;
+    	cursor: pointer;
 
 		svg{
 			display: block;
@@ -53,13 +57,20 @@
 			opacity: 1;
 			height: 150px;
     		width: 150px;
+
+    		&:hover{
+    			// &:after{
+    			// 	content:"I've had it";
+    			// 	color: white; 
+    			// }
+    		}
+
 		}
 
 		.path {
 			stroke-dasharray: 1000;
 			stroke-dashoffset: 1000;
-			animation-delay: 2s;
-			animation: dash 2s ease-in-out alternate;
+			animation: dash 1.2s ease-in-out forwards;
 		}
 	}
 
@@ -67,7 +78,9 @@
 		.check{
 			transition: all .2s ease;
 
-			svg{
+			svg polyline{
+				transform-origin: center center;
+				animation: kablaam .4s ease-in-out;
 				fill-opacity: 1;
 			}
 		}
@@ -100,6 +113,14 @@
 }
 
 
+@keyframes dash {
+  from {
+    stroke-dashoffset: 1000;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
 
 @keyframes expand {
   0% {
@@ -116,6 +137,20 @@
   }
 }
 
+@keyframes kablaam {
+	15% {
+		transform: scale(.5);
+	}
+	30% {
+		transform: scale(0);
+	}
+	50% {
+		transform: scale(1.1)
+	}
+	100% {
+		transform: scale(1)
+	}
+}
 
 
 

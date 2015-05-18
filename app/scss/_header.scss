@@ -1,6 +1,6 @@
 header{
 	position: relative;
-	padding: 60px;
+	padding: 80px;
 	text-align: center;
 	text-transform: lowercase;
 	letter-spacing: .1em;
@@ -11,7 +11,7 @@ header{
 	.logo{
 		margin: 0 auto;
 		z-index: 100;
-		width: 20%;
+		width: 100px;
 		text-align: center;
 		position: absolute;
 		left: 50%;
@@ -21,6 +21,8 @@ header{
 		svg{
 			width: 100px;
 			height: auto;
+			position: relative;
+			top: 10px;
 		}
 	}
 }
@@ -36,4 +38,7 @@ footer{
 	}
 }
 
-
+// h1 on move
+// position: relative;
+// left: -200px;
+// top: 38px;

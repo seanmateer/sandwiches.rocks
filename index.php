@@ -11,7 +11,9 @@
 <body>
 
 	<header>
-		<h1>Sandwiches.rocks</h1>
+		<h1>
+			<span class="left">Sandwiches</span><span class="right"><span class="bye">.</span>rock<span class="bye">s</span></span>
+		</h1>
 		<div class="logo">
 			<?php echo file_get_contents("app/assets/sandwich2.svg"); ?>
 		</div>
@@ -59,7 +61,7 @@
 	</div>
 
 	<footer>
-		<?php echo file_get_contents("app/assets/check3.svg"); ?>
+		<?php echo file_get_contents("app/assets/check5.svg"); ?>
 		<p>yumm</p>
 	</footer>
 
