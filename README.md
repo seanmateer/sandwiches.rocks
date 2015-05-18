@@ -2,14 +2,14 @@
 
 Your guide to a list of notable sandwiches.
 
-## Grab sandwiches
+## Grab Sandwiches
 
 * run node server.js
   * Navigate to /scrape
 * run node images.js
   * need to combine into one
 
-## Display sandwiches
+## Display Sandwiches
 
 * npm install && bower install
 * brew install GraphicsMagick – Requires [Homebrew](http://brew.sh/)
