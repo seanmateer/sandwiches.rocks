@@ -9,6 +9,7 @@
 	<link href='http://fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'>
 </head>
 <body>
+
 	<header>
 		<h1>Sandwiches.rocks</h1>
 		<div class="logo">
@@ -18,12 +19,22 @@
 
 	<div class="controls">
 		<label>Sort:</label>
-<!-- 		<button class="sort" data-sort="myorder:asc">Asc Sandwiches</button>
-		<button class="sort" data-sort="myorder:desc">Desc Sandwiches</button> -->
-		<button class="sort" data-sort="random">Random Sandwiches</button>
-	</div>
-	<button class="sort" data-sort="random">lol</button>
+			<button class="sort active" data-sort="myorder:asc">Asc</button>
+			<button class="sort" data-sort="myorder:desc">Desc</button>
+			<button class="sort" data-sort="random">Random</button>
 
+			<div class="badge-wrapper">
+			<label>Badges:</label>
+			<ul class="badges">
+				<li><?php echo file_get_contents("app/assets/emptyBadge.svg"); ?></li>
+				<li><?php echo file_get_contents("app/assets/emptyBadge.svg"); ?></li>
+				<li><?php echo file_get_contents("app/assets/emptyBadge.svg"); ?></li>
+				<li><?php echo file_get_contents("app/assets/emptyBadge.svg"); ?></li>
+				<li><?php echo file_get_contents("app/assets/emptyBadge.svg"); ?></li>
+			</ul>
+		</div>
+	</div>
+	
 	<div id="container" class="container">
 		<?php
 			$json_url = "data/sandwiches.json";
@@ -40,6 +51,7 @@
 						<p class="replace"><?php echo $val['image'] ?></p>
 					</div>
 					<p><?php echo $val['description'] ?></p>
+					<div class="check"><?php echo file_get_contents("app/assets/check5.svg"); ?></div>
 				</div>
 			<?php } ?>
 

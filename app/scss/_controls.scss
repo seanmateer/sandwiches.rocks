@@ -1,0 +1,75 @@
+.controls{
+  position: relative;
+  padding: 1.2% 0;
+  background: $control-bkg;
+  color: #eee;
+  border-top: 1px solid $card-odd;
+
+  &:after{
+    content: " ";
+    position: absolute;
+    bottom: 0;
+    display: block;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(to right, #57c3a3, #05aaad);
+  }
+
+  label{
+    padding-left: 20px;
+    font-weight: 300;
+    margin: 0 .4em 0 0;
+  }
+
+  button{
+    display: inline-block;
+    padding: .4em .8em;
+    background: #2F2F2F;
+    border: 0;
+    color: #ddd;
+    font-size: 16px;
+    font-weight: 300;
+    border-radius: 4px;
+    cursor: pointer;
+
+    &.active{
+      background: #68b8c4;
+    }
+
+    &:focus{
+      outline: 0 none;
+    }
+  }
+
+  button + label{
+    margin-left: 1em;
+  }
+
+  .badge-wrapper{
+    float: right;
+    display: block;
+    padding: .4em .8em;
+
+    label{
+      float: left;
+      margin-right: 20px;
+    }
+  }
+  .badges{
+    display: block;
+    overflow: hidden;
+    float: right;
+    margin: 0px;
+    padding: 0px;
+    list-style-type: none;
+    margin-top: -10px;
+
+    li{
+      float: left;
+      margin-right: 10px;
+      height: 100%;
+      width: 38px;
+    }
+  }
+}
+

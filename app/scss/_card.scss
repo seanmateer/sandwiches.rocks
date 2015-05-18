@@ -1,95 +1,139 @@
-.mix h2,
-.mix h3,
-.mix p {
-  padding: 0 10px;
+.card{
+	position: relative;
+	text-align: left;
+	background: $card-even;
+	margin-bottom: 1%;
+
+	&:before{
+		transition: opacity .2 ease;
+		content: " ";
+		display: block;
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		background-color: $secondary;
+		opacity: 0;
+	}
+
+	.check {
+		transition: all .2 ease;
+		display: block;
+		position: absolute;
+		top: 50%;
+		transform: translateY(-50%);
+		right: 0;
+		left: 0;
+		background: linear-gradient(to right, #57c3a3, #05aaad);
+		margin: 0 auto;
+		opacity: 0;
+		width: 0px;
+		height: 0px;
+		border-radius: 150px;
+
+		svg{
+			display: block;
+			margin: auto;
+			right: 0;
+			left: 0;
+			position: absolute;
+			top: 50%;
+			transform: translateY(-50%);
+			fill-opacity: 0.0;
+		}
+	}
+
+	&:hover{
+		&:before{
+			transition: opacity .2s ease;
+			opacity: .8;
+		}
+
+		.check{
+			animation: expand .3s linear;
+			opacity: 1;
+			height: 150px;
+    		width: 150px;
+		}
+
+		.path {
+			stroke-dasharray: 1000;
+			stroke-dashoffset: 1000;
+			animation-delay: 2s;
+			animation: dash 2s ease-in-out alternate;
+		}
+	}
+
+	&.checked{
+		.check{
+			transition: all .2s ease;
+
+			svg{
+				fill-opacity: 1;
+			}
+		}
+	}
 }
 
+.card {
+	h2 {
+		color: $dark-gray;
+		margin-bottom: 5px;
+	}
+}
 
-.card{
-  position: relative;
-  text-align: left;
-  background: $card-even;
-  margin-bottom: 1%;
-
-  &:before{
-    transition: opacity .2 ease;
-    content: " ";
-    display: block;
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background-color: $secondary;
-    opacity: 0;
-  }
-
-  &:after{
-    transition: all .2 ease;
-    content: " ";
-    background-image: url('../../app/assets/check3.svg');
-    background-size: cover;
-    background-repeat: none;
-    text-align: center;
-    color: white;
-    display: block;
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    right: 0;
-    left: 0;
-    margin: 0 auto;
-    width: 20px;
-    height: 20px;
-    border-radius: 150px;
-    background-color: $primary;
-    opacity: 0;
-  }
-
-  h2{
-    color: $dark-gray;
-    margin-bottom: 5px;
-  }
+.card h2,
+.card h3,
+.card p {
+	padding: 0 10px;
 }
 
 .replace{
-  display: none;
+	display: none;
 }
 
 .card:nth-child(even){
-  background-color: $card-odd;
+	background-color: $card-odd;
 
-  h2{
-    color: darken($dark-gray, 10%);
-  }
+	h2{
+		color: darken($dark-gray, 10%);
+	}
 }
 
 
-.card:hover{
 
-  &:before{
-    transition: opacity .2s ease;
-    opacity: .8;
+@keyframes expand {
+  0% {
+   height: 0px;
+   width: 0px;
   }
-
-  &:after{
-    transition: all .2s ease;
-    transition-delay: .1s;
-    opacity: 1;
-    width: 150px;
+  75% {
+    height: 175px;
+    width: 175px;
+  }
+  100% {
     height: 150px;
+    width: 150px;
   }
 }
+
+
+
+
+
+
+
 
 
 .mix h3{
-  margin-top: 0px;
-  font-weight: 300;
+	margin-top: 0px;
+	font-weight: 300;
 }
 .mix .wrap {
 	display: block;
 	width: 100%;
 	max-height: 200px;
 	overflow: hidden;
-  /*position: relative;*/
+/*position: relative;*/
 
 }
 
@@ -99,26 +143,26 @@
 }
 
 .container .mix.category-1{
-  border-top: 2px solid limegreen;
+	border-top: 2px solid limegreen;
 }
 
 .container .mix.category-2{
-  border-top: 2px solid yellow;
+	border-top: 2px solid yellow;
 }
 
 @media all and (min-width: 420px){
-  .container .mix,
-  .container .gap{
-    width: 32%;
-  }
+	.container .mix,
+	.container .gap{
+		width: 32%;
+	}
 }
 
 @media all and (min-width: 640px){
-  .container .mix,
-  .container .gap{
-    width: 19%;
-      display: block;
-    height: 500px;
-    overflow: hidden;
-  }
+	.container .mix,
+	.container .gap{
+		width: 19%;
+		display: block;
+		height: 500px;
+		overflow: hidden;
+	}
 }
