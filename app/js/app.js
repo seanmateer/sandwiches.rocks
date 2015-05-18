@@ -24,14 +24,14 @@ $(document).ready(function() {
 		$(this).parent().append('<img src="'+imgPath+'"/>');
 	});
 
-	$(function() {
-	    $(window).scroll(function() {
-	        var vertAlign = ($(window).scrollTop());
-	        if (vertAlign <= 80){
-	        	$("header").css('padding', 80 - vertAlign);
-	    	}
-	    });
-	});
+	// $(function() {
+	//     $(window).scroll(function() {
+	//         var vertAlign = ($(window).scrollTop());
+	//         if (vertAlign <= 80){
+	//         	$("header").css('padding', 80 - vertAlign);
+	//     	}
+	//     });
+	// });
 
 	$('.check').on('click',function(){
 		$(this).parent().toggleClass('checked');
